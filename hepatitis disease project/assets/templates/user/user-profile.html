@@ -1,0 +1,643 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Hepatitis Disease</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'main/img/favicon.png' %}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static  'main/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static  'main/css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static  'main/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static  'main/css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static  'main/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static  'main/css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static  'main/css/style.css' %}">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <style>
+        body {
+            background-image: url('{% static "main/img/Capture5.jpg" %}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+          }
+    
+        
+        .emp-profile {
+            padding: 3%;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            border-radius: 0.5rem;
+            background: #fff;
+        }
+
+        .profile-img {
+            text-align: center;
+        }
+
+        .profile-img img {
+            width: 70%;
+            height: 100%;
+        }
+
+        .profile-img .file {
+            position: relative;
+            overflow: hidden;
+            margin-top: -20%;
+            width: 70%;
+            border: none;
+            border-radius: 0;
+            font-size: 15px;
+            background: #212529b8;
+        }
+
+        .profile-img .file input {
+            position: absolute;
+            opacity: 0;
+            right: 0;
+            top: 0;
+        }
+
+        .profile-head h5 {
+            color: #333;
+        }
+
+        .profile-head h6 {
+            color: #0062cc;
+        }
+
+        .profile-edit-btn {
+            border: none;
+            border-radius: 1.5rem;
+            width: 70%;
+            padding: 2%;
+            font-weight: 600;
+            color: #6c757d;
+            cursor: pointer;
+        }
+
+        .proile-rating {
+            font-size: 12px;
+            color: #818182;
+            margin-top: 5%;
+        }
+
+        .proile-rating span {
+            color: #495057;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .profile-head .nav-tabs {
+            margin-bottom: 5%;
+        }
+
+        .profile-head .nav-tabs .nav-link {
+            font-weight: 600;
+            border: none;
+        }
+
+        .profile-head .nav-tabs .nav-link.active {
+            border: none;
+            border-bottom: 2px solid #0062cc;
+        }
+
+        .profile-work {
+            padding: 14%;
+            margin-top: -15%;
+        }
+
+        .profile-work p {
+            font-size: 12px;
+            color: #818182;
+            font-weight: 600;
+            margin-top: 10%;
+        }
+
+        .profile-work a {
+            text-decoration: none;
+            color: #495057;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .profile-work ul {
+            list-style: none;
+        }
+
+        .profile-tab label {
+            font-weight: 600;
+        }
+
+        .profile-tab p {
+            font-weight: 600;
+            color: #0062cc;
+        }
+   
+        
+        input.form-control {
+            border: none;
+            width:500px;
+            
+        }
+    
+        .profile-card {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            
+          }
+       
+    
+        
+    </style>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="row">
+                                <div class="col-md-1" >
+                                  <a href="index.html" style="margin-right:500px;">
+                                    <img src="{% static 'main/img/log.png' %}" alt="">
+                                  </a>
+                                </div>
+                                <div class="col-md-1">
+                                  <span style="color:#fff; font-size:20px;">HEPATITIS&nbsp;&nbsp;DISEASE&nbsp;&nbsp;PREDICTION</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-8">
+                            <div class="menu_wrap d-none d-lg-block">
+                                <div class="menu_wrap_inner d-flex align-items-center justify-content-end">
+                                    <div class="main-menu">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li><a href="{% url 'user_dashboard' %}">Dashboard</a></li>
+                                                <li><a href="{% url 'user_predict' %}">Hepatitis Disease Prediction</a></li>
+                                                <li><a href="{% url 'user_profile' %}">Profile</a></li>
+                                                <li><a href="{% url 'user_feedback' %}">Feedback</a></li>
+                                                <li><a href="{% url 'user_login' %}">Logout</a></li>
+                                             </ul>
+                                        </nav>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    
+   
+ 
+    <div style="padding-top: 100px;">
+        <div class="container emp-profile">
+          <form method="post" enctype='multipart/form-data' class="row profile-card"> <!-- Added profile-card class -->
+            {% csrf_token %}
+        
+                <!-- Image Column -->
+                <div class="profile-img col-md-6" name="profilepic">
+                    <img src="/media/{{i.user_image}}" alt="" />
+                    <div class="file btn btn-lg btn-primary">
+                        Change Photo
+                        <input type="file" name="profilepic" />
+                    </div>
+                    <h5>{{i.user_name}}</h5>
+                </div>
+                
+                <!-- Form Column -->
+                <div class="col-md-6">
+                    <div class="profile-head">
+                        
+        
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                    aria-controls="home" aria-selected="true">About</a>
+                            </li>
+                        </ul>
+                        <div class="col-md-12 mt-3" style="padding-left:400px;">
+                            <button class="btn btn-block" style="background-color: #031B4E; color: #fff; border-radius: 20px;">Submit</button>
+                        </div>
+                    </div>
+        
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="col-md-6">
+                                <label>Name</label>
+                                <input type="text" class="form-control" placeholder="" value="{{i.user_name}}" name="userName">
+                            </div>
+        
+                            <div class="col-md-6">
+                                <label>Age</label>
+                                <input type="text" class="form-control" value="{{i.user_age}}" name="userAge" placeholder="">
+                            </div>
+        
+                            <div class="col-md-6">
+                                <label>Email</label>
+                                <input type="text" class="form-control" placeholder="" value="{{i.user_email}}" name="userEmail">
+                            </div>
+        
+                            <div class="col-md-6">
+                                <label>Phone</label>
+                                <input type="text" class="form-control" value="{{i.user_contact}}" placeholder="" name="userPhNum">
+                            </div>
+        
+                            <div class="col-md-6">
+                                <label>Address</label>
+                                <input type="text" class="form-control" placeholder="" value="{{i.user_address}}" name="userAddress">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Submit Button Column -->
+                
+            </form>
+        </div>
+    </div>
+    
+    
+    <div class="expert_doctors_area p-0" >
+        <div class="container"style="padding-top:200px;">
+            <div class="row justify-content-center ">
+                <div class="col-lg-6">
+                    <div class="section_title mb-55 text-center">
+                        <h3 style="color:#fff;">Our Doctors</h3>
+                        <p  style="color:#fff;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_expert">
+                        <div class="expert_thumb">
+                            <img src="{% static 'main/img/experts/1.png' %}" alt="">
+                        </div>
+                        <div class="experts_name text-center">
+                            <h3>Jhon Smith</h3>
+                            <span>Dentist</span>
+                            <div class="social_links">
+                                <ul>
+                                    <li>
+                                        <a href="#"> <i class="fa fa-facebook"></i> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> <i class="fa fa-twitter"></i> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_expert">
+                        <div class="expert_thumb">
+                            <img src="{% static 'main/img/experts/2.png' %}" alt="">
+                        </div>
+                        <div class="experts_name text-center">
+                            <h3>Jhon Smith</h3>
+                            <span>Dentist</span>
+                            <div class="social_links">
+                                <ul>
+                                    <li>
+                                        <a href="#"> <i class="fa fa-facebook"></i> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> <i class="fa fa-twitter"></i> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_expert">
+                        <div class="expert_thumb">
+                            <img src="{% static 'main/img/experts/3.png' %}" alt="">
+                        </div>
+                        <div class="experts_name text-center">
+                            <h3>Jhon Smith</h3>
+                            <span>Dentist</span>
+                            <div class="social_links">
+                                <ul>
+                                    <li>
+                                        <a href="#"> <i class="fa fa-facebook"></i> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> <i class="fa fa-twitter"></i> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Emergency_contact start -->
+    <div class="Emergency_contact">
+        <div class="Emergency_contact_inner ">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="single_emergency">
+                            <div class="info">
+                                <span>We are here for you</span>
+                                <h3>Book Appointment</h3>
+                            </div>
+                            <div class="info_button">
+                                <a href="#" class="boxed-btn3-white">Book Appointment
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single_emergency align-items-center d-flex justify-content-end">
+                            <div class="icon">
+                                <i class="flaticon-call"></i>
+                            </div>
+                            <div class="info">
+                                <span>Emergency Medical Care</span>
+                                <h3>+91 8555 8879 86</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Emergency_contact end -->
+
+   
+ 
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 col-lg-4 ">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img src="img/logo.png" alt="">
+                                </a>
+                            </div>
+                            <p class="address_text">Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit, sed do <br> eiusmod tempor incididunt ut labore.
+                            </p>
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-twitter-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-dribbble"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Our Departments
+                            </h3>
+                            <ul class="links">
+                                <li><a href="#">Births</a></li>
+                                <li><a href="#">Pulmonary</a></li>
+                                <li><a href="#">Cardiology</a></li>
+                                <li><a href="#">Neurology</a></li>
+                                <li><a href="#">Traumatology</a></li>
+                                <li><a href="#">Dental</a></li>
+                                <li><a href="#">Nuclear</a></li>
+                                <li><a href="#">magnetic</a></li>
+                                <li><a href="#">Pregnancy</a></li>
+                                <li><a href="#">For disabled</a></li>
+                                <li><a href="#">X-ray</a></li>
+                                <li><a href="#">Prostheses</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4  col-md-6 col-lg-4">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                We’re Available
+                            </h3>
+                            <ul class="meting_time">
+                                <li class="d-flex justify-content-between "><span>Monday - Friday</span> <span>8.00 - 18.00</span></li>
+                                <li class="d-flex justify-content-between "><span>Saturday	</span> <span>8.00 - 18.00</span></li>
+                                <li class="d-flex justify-content-between "><span>Sunday</span> <span>8.00 - 13.00</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="row">
+                    <div class="bordered_1px "></div>
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://www.codebook.in/" target="_blank">Codebook.in</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- link that opens popup -->
+
+    <!-- form itself end-->
+    <form id="test-form" class="white-popup-block mfp-hide">
+        <div class="popup_box ">
+            <div class="popup_inner">
+                <h3>
+                    Book an 
+                <span>Appointment</span>
+                </h3>
+                <form action="#">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <select class="form-select wide" id="default-select" class="">
+                                <option data-display="Please select doctor to visit">Please select doctor to visit </option>
+                                <option value="1">Anaf</option>
+                                <option value="2">Nayna Therapy</option>
+                                <option value="3">Nadif</option>
+                            </select>
+                        </div>
+                        <div class="col-xl-9">
+                            <input type="text"  placeholder="Your name ">
+                        </div>
+                        <div class="col-xl-3">
+                            <input type="text"  placeholder="Your age">
+                        </div>
+                        <div class="col-xl-6">
+                            <input type="text"  placeholder="Phone number ">
+                        </div>
+                        <div class="col-xl-6">
+                            <input type="email"  placeholder="Email Address">
+                        </div>
+                        <div class="col-xl-6">
+                            <input class="datepicker" placeholder="Appointment Date">
+                        </div>
+                        <div class="col-xl-6">
+                            <input class="timepicker" placeholder="Suitable time">
+                        </div>
+                        <div class="col-xl-12">
+                            <button type="submit" class="boxed-btn3">Make an Appointment</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </form>
+    <!-- form itself end -->
+    
+        <!-- JS here -->
+    <script src="{% static 'main/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+    <script src="{% static  'main/js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'main/js/popper.min.js' %}"></script>
+    <script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+    <script src="{% static  'main/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static  'main/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'main/js/ajax-form.js' %}"></script>
+    <script src="{% static  'main/js/waypoints.min.js' %}"></script>
+    <script src="{% static  'main/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'main/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'main/js/scrollIt.js' %}"></script>
+    <script src="{% static 'main/js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'main/js/wow.min.js' %}"></script>
+    <script src="{% static 'main/js/nice-select.min.js' %}"></script>
+    <script src="{% static  'main/js/jquery.slicknav.min.js' %}"></script>
+    <script src="{% static  'main/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static  'main/js/plugins.js' %}"></script>
+    <script src="{% static  'main/js/gijgo.min.js' %}"></script>
+    <!--contact js-->
+    <script src="{% static 'main/js/contact.js' %}"></script>
+    <script src="{% static  'main/js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'main/js/jquery.form.js' %}"></script>
+    <script src="{% static 'main/js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'main/js/mail-script.js' %}"></script>
+
+    <script src="{% static 'main/js/main.js' %}"></script>
+    <script>
+        $('.datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-calendar"></span>'
+            }
+        });
+
+        $('.timepicker').timepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-clock-o"></span>'
+            }
+        });
+    $(document).ready(function() {
+    $('.js-example-basic-multiple').select2();
+});
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    {% if messages %}
+            {% for message in messages %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                    <script>swal({
+                            title: "Success!",
+                            text: "{{message}}",
+                            icon: "success",
+                            button: "OK",
+                        });
+                    </script>
+                
+                {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+                    <script>swal({
+                            title: "Warning :)",
+                            text: "{{message}}",
+                            icon: "warning",
+                            button: "OK",
+                        
+                        });
+                    </script>
+                {% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                    <script>swal({
+                            title: "info :)",
+                            text: "{{message}}",
+                            icon: "info",
+                            button: "OK",
+                        });
+                    </script>
+                {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    <script>swal({
+                            title: "error :)",
+                            text: "{{message}}",
+                            icon: "error",
+                            button: "OK",
+                        });
+                    </script>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+</body>
+
+</html>
